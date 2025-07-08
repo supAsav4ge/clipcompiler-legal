@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClipCompiler - Outil MCP pour TikTok</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 50px 0;
+        }
+        .header h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            opacity: 0.9;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        .feature {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .feature h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        .links {
+            background: rgba(255,255,255,0.95);
+            color: #333;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px 0;
+            text-align: center;
+        }
+        .links h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .link-item {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #495057;
+            display: block;
+        }
+        .link-item:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            opacity: 0.8;
+            font-size: 0.9em;
+        }
+        .status {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 4px solid #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎬 ClipCompiler</h1>
+            <p>Outil MCP pour automatiser vos compilations TikTok</p>
+            <div class="status">
+                <strong>⚠️ Statut :</strong> Application en développement - Phase de test avec TikTok for Developers
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <h3>🤖 Automatisation Complète</h3>
+                <p>Compilation automatique de clips Twitch francophones et upload direct sur TikTok via MCP (Model Context Protocol).</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🔐 Sécurité OAuth 2.0</h3>
+                <p>Authentification sécurisée avec TikTok. Vos identifiants ne sont jamais stockés, seuls les tokens temporaires sont conservés.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>📱 Optimisé TikTok</h3>
+                <p>Format 9:16, métadonnées automatiques, hashtags intelligents et respect des guidelines TikTok.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🛠️ Open Source</h3>
+                <p>Code source disponible, transparent et auditable. Outil de développement pour créateurs de contenu.</p>
+            </div>
+        </div>
+
+        <div class="links">
+            <h2>📋 Documentation Légale</h2>
+            <p>Conformément aux exigences de TikTok for Developers :</p>
+            
+            <div class="link-grid">
+                <a href="terms-of-service.html" class="link-item">
+                    <strong>📜 Conditions d'Utilisation</strong>
+                    <br><small>Règles d'usage de ClipCompiler</small>
+                </a>
+                
+                <a href="privacy-policy.html" class="link-item">
+                    <strong>🔒 Politique de Confidentialité</strong>
+                    <br><small>Protection de vos données</small>
+                </a>
+                
+                <a href="https://github.com/brandon/clipcompiler" class="link-item">
+                    <strong>🐙 Code Source</strong>
+                    <br><small>Repository GitHub</small>
+                </a>
+                
+                <a href="mailto:brandon@clipcompiler.dev" class="link-item">
+                    <strong>📧 Contact</strong>
+                    <br><small>Support et questions</small>
+                </a>
+            </div>
+        </div>
+
+        <div class="links">
+            <h2>🎯 Fonctionnalités Principales</h2>
+            <div style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <ul style="font-size: 1.1em; line-height: 1.8;">
+                    <li><strong>Collecte automatique</strong> des clips Twitch francophones populaires</li>
+                    <li><strong>Compilation intelligente</strong> au format TikTok (9:16)</li>
+                    <li><strong>Upload direct</strong> via l'API TikTok Content Posting</li>
+                    <li><strong>Gestion des métadonnées</strong> (titre, description, hashtags)</li>
+                    <li><strong>Contrôle de confidentialité</strong> (privé, amis, public)</li>
+                    <li><strong>Suivi en temps réel</strong> du statut des publications</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 ClipCompiler - Outil MCP pour créateurs de contenu</p>
+            <p>Développé avec ❤️ pour la communauté francophone</p>
+            <p><small>En conformité avec TikTok for Developers API Guidelines</small></p>
+        </div>
+    </div>
+</body>
+</html>

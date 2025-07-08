@@ -1,0 +1,38 @@
+# Configuration Jekyll pour GitHub Pages
+title: "ClipCompiler Legal Pages"
+description: "Pages légales pour l'application ClipCompiler - Outil MCP TikTok"
+url: "https://[votre-username].github.io"
+baseurl: "/clipcompiler-legal"
+
+# Paramètres GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclusions
+exclude:
+  - deploy.sh
+  - deploy.bat
+  - README.md
+  - .gitignore
+
+# Métadonnées
+author: "Brandon"
+email: "brandon@clipcompiler.dev"
+lang: "fr"
+
+# Social
+github_username: "[votre-username]"
+
+# Collections (pour futures extensions)
+collections_dir: collections
+
+# Markdown
+markdown: kramdown
+highlighter: rouge
+
+# Permalinks
+permalink: pretty
+
+# Timezone
+timezone: Europe/Paris
