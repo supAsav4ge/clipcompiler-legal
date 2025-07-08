@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok OAuth Callback - ClipCompiler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .code-display {
+            background: rgba(255,255,255,0.9);
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 1.2em;
+            word-break: break-all;
+            margin: 20px 0;
+        }
+        .instructions {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 TikTok OAuth Callback</h1>
+        <p><strong>ClipCompiler - Authentification réussie !</strong></p>
+        
+        <div id="callback-info">
+            <p>Si vous voyez un code d'autorisation dans l'URL, copiez-le ci-dessous :</p>
+            <div class="code-display" id="auth-code">
+                Aucun code détecté automatiquement
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 Instructions :</h3>
+            <ol>
+                <li><strong>Copiez le code</strong> depuis l'URL ou la zone ci-dessus</li>
+                <li><strong>Retournez dans votre interface MCP</strong></li>
+                <li><strong>Utilisez la commande :</strong><br>
+                    <code>tiktok:authenticate({"code": "VOTRE_CODE_ICI"})</code>
+                </li>
+                <li><strong>Continuez</strong> avec l'upload de votre vidéo</li>
+            </ol>
+        </div>
+
+        <p><small>Page de callback pour ClipCompiler - Outil MCP TikTok</small></p>
+    </div>
+
+    <script>
+        // Extraire le code d'autorisation de l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const authCode = urlParams.get('code');
+        const error = urlParams.get('error');
+        
+        if (authCode) {
+            document.getElementById('auth-code').innerHTML = `
+                <strong>Code d'autorisation :</strong><br>
+                ${authCode}
+            `;
+        } else if (error) {
+            document.getElementById('auth-code').innerHTML = `
+                <strong style="color: red;">Erreur :</strong><br>
+                ${error}
+            `;
+        } else {
+            document.getElementById('auth-code').innerHTML = `
+                Vérifiez l'URL de cette page pour le paramètre 'code'
+            `;
+        }
+    </script>
+</body>
+</html>
